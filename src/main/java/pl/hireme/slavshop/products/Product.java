@@ -20,8 +20,10 @@ public class Product {
     private Long id;
     private String name;
     private String description;
-    private String price;
-    private String type;
+    private Double price;
+    private ProductType type;
+    private String imageLocation;
+
 
 }
 

@@ -1,5 +1,4 @@
 package pl.hireme.slavshop.common;
-
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import pl.hireme.slavshop.common.profiler.Profiler;

@@ -1,4 +1,4 @@
-package pl.hireme.slavshop.common;
+package pl.hireme.slavshop.common.web;
 
 import lombok.Value;
 

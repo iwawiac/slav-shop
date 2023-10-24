@@ -1,4 +1,4 @@
-package pl.hireme.slavshop.common;
+package pl.hireme.slavshop.common.web;
 
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;

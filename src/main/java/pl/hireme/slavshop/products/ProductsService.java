@@ -5,7 +5,7 @@ import lombok.extern.java.Log;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.transaction.annotation.Transactional;
-import pl.hireme.slavshop.common.PagedResult;
+import pl.hireme.slavshop.common.web.PagedResult;
 
 @Transactional
 @RequiredArgsConstructor
@@ -16,6 +16,11 @@ public class ProductsService {
 
     public Product add(Product product) {
         return productsRepository.save(product);
+    }
+
+    public Product getById(Long id) {
+        return productsRepository.findById(id)
+                .orElseThrow(ProductNotFoundException::new);
     }
 
     public PagedResult<Product> getAll (int pageNumber, int pageSize) {
