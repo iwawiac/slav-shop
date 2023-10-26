@@ -7,6 +7,7 @@ import pl.hireme.slavshop.common.web.PagedResult;
 public interface ProductMapper {
     Product toProduct(ProductDTO productDTO);
     @Mapping(source = "id", target = "id")
+    @Mapping(source = "imageLocation", target = "imageLocation")
     ProductDTO toProductDTO(Product product);
 
     PagedResult<ProductDTO> toProductTransferObjectsPage(PagedResult<Product> productsPage);

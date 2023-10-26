@@ -62,7 +62,7 @@ public class ProductsRestController {
 
     @RequestMapping(value = "{id}/files", method = RequestMethod.POST)
     public String submit(@PathVariable Long id, @RequestParam MultipartFile file) throws IOException {
-        FileSystemUtils.downloadFileToProductId(id, file);
+        productsService.updateImageUrl(id, file);
         return "File " + file.getOriginalFilename() + " uploaded";
     }
 

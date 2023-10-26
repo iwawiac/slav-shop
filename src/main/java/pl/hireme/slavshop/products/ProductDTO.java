@@ -17,4 +17,5 @@ public class ProductDTO extends RepresentationModel<ProductDTO> {
     private String price;
     @IsProductType
     private String type;
+    private String imageLocation;
 }
