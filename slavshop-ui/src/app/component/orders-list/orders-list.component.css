@@ -1,0 +1,39 @@
+
+.table-hover tr:hover {
+    background-color: #f2f2f2; /* Light grey background color */
+}
+
+.table-hover {
+    margin-left: 170px;
+    max-width: 70%;
+}
+
+.table-hover img {
+    margin-right: -80px;
+}
+
+.table-hover td ul {
+    margin: 0px;
+    padding: 0px;
+}
+
+.table td ul li.name:hover {
+    color: darkcyan; /* Change the text color to light green on hover */
+}
+
+.table td ul li.price {
+    font-size: 28px; /* Adjust the font size as needed */
+}
+
+ul, ol {
+    list-style: none;
+}
+
+.small-image {
+    max-width: 150px; /* Set your preferred maximum width */
+    max-height: 150px; /* Set your preferred maximum height */
+}
+
+.order-summary{
+    font-size: 20px;
+}

@@ -31,9 +31,13 @@ public class ProductsService {
     }
 
     public Product getById(Long id) {
-
         return productsRepository.findById(id)
                 .orElseThrow(ProductNotFoundException::new);
+    }
+
+    public PagedResult<Product> getByType(ProductType type, int pageNumber, int pageSize) {
+        var productPage = productsRepository.findByType(type, PageRequest.of(pageNumber, pageSize));
+        return new PagedResult<>(productPage.getContent(), pageNumber, productPage.getTotalPages());
     }
 
     public PagedResult<Product> getAll (int pageNumber, int pageSize) {

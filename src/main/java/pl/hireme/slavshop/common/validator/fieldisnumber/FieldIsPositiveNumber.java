@@ -15,4 +15,5 @@ public @interface FieldIsPositiveNumber {
     String message() default "Field must be a positive number";
     Class<?>[] groups() default {};
     Class<? extends Payload>[] payload() default {};
+
 }

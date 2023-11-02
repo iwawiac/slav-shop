@@ -18,4 +18,5 @@ public class LoggingBeanPostProcessor implements BeanPostProcessor {
         log.info("Bean " + beanName + " initialized");
         return bean;
     }
+
 }

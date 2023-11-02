@@ -1,0 +1,5 @@
+<button class="btn btn-primary "
+        [class.order-placed]="orderPlaced"
+        (click)="placeOrderClicked.emit(); showOrderPlacedMessage()">
+    {{ buttonLabel }}
+</button>

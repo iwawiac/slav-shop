@@ -14,7 +14,6 @@ import java.lang.annotation.Target;
 public @interface FieldNotEmpty {
 
     String message() default "Field cannot be empty, please enter a valid value";
-
     Class<?>[] groups() default {};
     Class<? extends Payload> [] payload() default {};
 

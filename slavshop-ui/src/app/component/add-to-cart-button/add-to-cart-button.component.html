@@ -1,0 +1,5 @@
+<button class="btn btn-sm btn-primary"
+        [class.added-to-cart]="isAddedToCart"
+(click)="addToCartClicked.emit(); showAddedToCartMessage()">
+{{ buttonLabel }}
+</button>

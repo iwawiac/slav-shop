@@ -14,4 +14,5 @@ public class FieldCannotBeEmptyValidator implements ConstraintValidator<FieldNot
     public boolean isValid(String field, ConstraintValidatorContext context) {
         return !Objects.equals(field, "") && field != null;
     }
+
 }

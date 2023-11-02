@@ -13,7 +13,7 @@ import java.lang.annotation.Target;
 @Constraint(validatedBy = ProductTypeValidator.class)
 public @interface IsProductType {
     String message() default "Valid product type required. Allowed types are: AUDIO, VIDEO, BOOK" ;
-
     Class<?>[] groups() default {};
     Class<? extends Payload> [] payload() default {};
+
 }

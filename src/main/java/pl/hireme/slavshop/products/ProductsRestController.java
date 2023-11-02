@@ -26,7 +26,7 @@ public class ProductsRestController {
     private final ProductMapper productMapper;
     private final UriBuilder uriBuilder = new UriBuilder();
 
-    @RequestMapping(method = RequestMethod.GET, value = "greetings")
+    @GetMapping("greetings")
     public String sayHello() {
         return "Hello from api products";
     }
@@ -46,6 +46,17 @@ public class ProductsRestController {
         return productMapper.toProductTransferObjectsPage(products);
     }
 
+    @GetMapping("/type/{productTypeRequest}")
+    PagedResult<ProductDTO> getProductsByType(
+            @RequestParam(defaultValue = "0") int pageNumber,
+            @RequestParam(defaultValue = "5") int pageSize,
+            @PathVariable ProductTypeDTO productTypeRequest
+    ) {
+        var productType = productMapper.toProductType(productTypeRequest);
+        var productsPagedResult = productsService.getByType(productType, pageNumber, pageSize);
+        return productMapper.toProductTransferObjectsPage(productsPagedResult);
+    }
+
     @PostMapping
     public ResponseEntity<?> addProduct(@RequestBody @Valid ProductDTO productDTO, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
@@ -60,13 +71,13 @@ public class ProductsRestController {
         return ResponseEntity.created(locationUri).build();
     }
 
-    @RequestMapping(value = "{id}/files", method = RequestMethod.POST)
+    @PostMapping("{id}/files")
     public String submit(@PathVariable Long id, @RequestParam MultipartFile file) throws IOException {
         productsService.updateImageUrl(id, file);
         return "File " + file.getOriginalFilename() + " uploaded";
     }
 
-    @RequestMapping(value = "{id}/files", method = RequestMethod.GET)
+    @GetMapping("{id}/files")
     public ResponseEntity<?> getFile(@PathVariable Long id) {
         Path fileLocation = FileSystemUtils.getFileLocation(id);
         Resource resource = new PathResource(fileLocation);
@@ -75,4 +86,5 @@ public class ProductsRestController {
                 .header("Content-Disposition", "inline; filename=\"" + resource.getFilename() + "\"")
                 .body(resource);
     }
+
 }

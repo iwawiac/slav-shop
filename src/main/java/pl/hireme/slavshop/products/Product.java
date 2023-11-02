@@ -4,6 +4,8 @@ package pl.hireme.slavshop.products;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.math.BigDecimal;
+
 @Table(name = "products", indexes = @Index(name = "product_type", columnList = "type"))
 @Entity
 @EqualsAndHashCode(exclude = "id")
@@ -20,10 +22,9 @@ public class Product {
     private Long id;
     private String name;
     private String description;
-    private Double price;
+    private BigDecimal price;
     private ProductType type;
     private String imageLocation;
-
 
 }
 

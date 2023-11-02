@@ -16,4 +16,10 @@ export class ProductsService {
     return this.httpClient.get<PagedResultModel<ProductModel>>(this.api.products, {params})
   }
 
+  getProductsByType(type: string, pageNumber = 0, pageSize = 5): Observable<PagedResultModel<ProductModel>> {
+    const params = { pageNumber: `${pageNumber}`, pageSize: `${pageSize}` };
+    const url = `${this.api.productsByType}${type}`;
+    return this.httpClient.get<PagedResultModel<ProductModel>>(url, { params });
+  }
+
 }

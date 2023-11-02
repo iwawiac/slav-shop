@@ -1,33 +1,37 @@
 <div *ngIf="pagedResult">
 
-  <table class="table">
+  <button class="btn btn-sm btn-outline-primary"
+          (click)="previous()"
+          *ngIf="pagedResult.pageNumber !== 0">Previous page</button>
+
+  <button class="btn btn-sm btn-outline-primary float-right"
+          (click)="next()"
+          *ngIf="pagedResult.pageNumber < pagedResult.totalPages-1">Next page</button>
+
+  <table class="table table-hover">
     <thead>
     <tr>
-      <th>Product name</th>
-      <th>Description</th>
-      <th>Price</th>
-      <th>Type</th>
-      <th>Image</th>
+      <th></th>
+      <th>Product details</th>
     </tr>
     </thead>
 
     <tbody>
     <tr *ngFor="let product of pagedResult.data">
-      <td>{{product.name}}</td>
-      <td>{{product.description}}</td>
-      <td>{{product.price}}</td>
-      <td>{{product.type}}</td>
       <td><img [src]="product.imageLocation" alt="Product Image" class="small-image"></td>
+      <td>
+        <ul>
+          <li class="name"><strong></strong> {{ product.name }}</li>
+          <li><strong></strong> {{ product.description }}</li>
+          <li><strong></strong> {{ product.type }}</li>
+          <li class="price"><strong></strong> {{ product.price }} PLN</li>
+          <li>
+            <app-add-to-cart-button (addToCartClicked)="addToCart(product.id)"></app-add-to-cart-button>
+          </li>
+        </ul>
+      </td>
     </tr>
     </tbody>
   </table>
-
-  <button class="btn btn-sm btn-outline-primary"
-          (click)="previous()"
-          *ngIf="pagedResult.pageNumber !== 0">Previous</button>
-
-  <button class="btn btn-sm btn-outline-primary float-right"
-          (click)="next()"
-          *ngIf="pagedResult.pageNumber < pagedResult.totalPages-1">Next</button>
 
 </div>

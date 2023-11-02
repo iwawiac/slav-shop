@@ -1,0 +1,27 @@
+<div *ngIf="pagedResult">
+    <table class="table table-hover">
+        <thead>
+        <th>Order summary</th>
+        <th>Purchased products</th>
+        </thead>
+        <tbody>
+        <tr *ngFor="let order of pagedResult.data">
+            <td class="order-summary">
+                <ul>
+                    <li class="order-summary"><strong></strong> Order id: {{ order.id }}</li>
+                    <li class="order-summary"><strong></strong> Number of products: {{ order.totalNumberOfProducts }}</li>
+                    <li class="order-summary"><strong></strong> Total order price: {{ order.totalPrice }}</li>
+                </ul>
+            </td>
+            <td class="product-details">
+                <ul>
+                    <li *ngFor="let product of order.products">
+                        {{ product.name }} - {{ product.price }} PLN
+                        <img [src]="product.imageLocation" alt="Product Image" class="small-image">
+                    </li>
+                </ul>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>

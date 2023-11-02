@@ -30,4 +30,5 @@ public class MvcConfiguration implements WebMvcConfigurer {
         plugins.add(new CollectionJsonLinkDiscoverer());
         return new LinkDiscoverers(SimplePluginRegistry.of(plugins));
     }
+
 }

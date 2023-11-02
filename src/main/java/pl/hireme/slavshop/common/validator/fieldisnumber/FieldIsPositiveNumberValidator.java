@@ -19,4 +19,5 @@ public class FieldIsPositiveNumberValidator implements ConstraintValidator<Field
             return false;
         }
     }
+
 }

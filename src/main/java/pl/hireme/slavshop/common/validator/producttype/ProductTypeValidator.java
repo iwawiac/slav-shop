@@ -18,4 +18,5 @@ public class ProductTypeValidator implements ConstraintValidator<IsProductType, 
         }
         return false;
     }
+
 }

@@ -13,8 +13,10 @@ public interface ProductMapper {
     PagedResult<ProductDTO> toProductTransferObjectsPage(PagedResult<Product> productsPage);
 
     @ValueMapping(source = "BOOK", target = "BOOK")
-    @ValueMapping(source = "VIDEO", target = "VIDEO")
-    @ValueMapping(source = "AUDIO", target = "AUDIO")
+    @ValueMapping(source = "POSTER", target = "POSTER")
+    @ValueMapping(source = "FOOD", target = "FOOD")
+    @ValueMapping(source = "APPAREL", target = "APPAREL")
+    @ValueMapping(source = "OTHER", target = "OTHER")
     ProductType toProductType(ProductTypeDTO productTypeDTO);
     @InheritInverseConfiguration
     ProductTypeDTO toProductTypeDTO(ProductType productType);
