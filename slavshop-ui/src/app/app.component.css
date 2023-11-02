@@ -2,3 +2,13 @@
   color: darkorange;
   font-weight: bold;
 }
+
+.cart-image{
+  max-width: 32px;
+  display: block;
+}
+
+.cart-margin{
+  margin-left: 120px;
+}
+

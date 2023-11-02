@@ -1,7 +1,6 @@
 package pl.hireme.slavshop.products;
 
 import lombok.Data;
-import lombok.EqualsAndHashCode;
 import org.springframework.hateoas.RepresentationModel;
 import pl.hireme.slavshop.common.validator.fieldisnumber.FieldIsPositiveNumber;
 import pl.hireme.slavshop.common.validator.fieldnotempty.FieldNotEmpty;
