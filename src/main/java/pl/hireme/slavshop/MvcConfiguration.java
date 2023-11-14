@@ -11,6 +11,7 @@ import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 @Configuration
@@ -21,7 +22,8 @@ public class MvcConfiguration implements WebMvcConfigurer {
         registry.addMapping("/api/**")
                 .allowedMethods("*")
                 .allowedHeaders("*")
-                .allowedOrigins("http://localhost:4200");
+                .allowedOrigins("*");
+
     }
 
     @Bean

@@ -26,7 +26,7 @@ public class ProductsService {
         FileSystemUtils.downloadFileToProductId(id, file);
         var product = productsRepository.findById(id)
                 .orElseThrow(ProductNotFoundException::new);
-        product.setImageLocation("http://localhost:8080/api/products/" + id + "/files"); // TODO: add dynamic link handling
+        product.setImageLocation("https://hire-me.pl/api/products/" + id + "/files"); // TODO: add dynamic link handling
         productsRepository.save(product);
     }
 

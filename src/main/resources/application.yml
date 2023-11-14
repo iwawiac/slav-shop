@@ -1,7 +1,4 @@
 spring:
-  jpa:
-    hibernate:
-      ddl-auto: create-drop
 
   servlet:
     multipart:
@@ -9,13 +6,5 @@ spring:
       enabled: true
       max-request-size: 5MB
       max-file-size: 5MB
-
-  h2:
-    console:
-      enabled: true
-      path: /h2
-
-  datasource:
-    url: jdbc:h2:file:~/slavshop
 
 apiPrefix: api

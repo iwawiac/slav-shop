@@ -4,19 +4,19 @@
 }
 
 .table-hover {
-  margin-left: 170px;
-  max-width: 70%;
+  /*margin-left: 170px;*/
+  /*max-width: 70%;*/
 }
 
 
 
 .table-hover img {
-  margin-right: -80px;
+  /*margin-right: -80px;*/
 }
 
 .table-hover td ul {
-  margin: 0px;
-  padding: 0px;
+  /*margin: 0px;*/
+  /*padding: 0px;*/
 }
 
 .table td ul li.name:hover {
@@ -32,6 +32,6 @@ ul, ol {
 }
 
 .small-image {
-  max-width: 250px; /* Set your preferred maximum width */
-  max-height: 250px; /* Set your preferred maximum height */
+  max-width: 250px;
+  max-height: 250px;
 }
